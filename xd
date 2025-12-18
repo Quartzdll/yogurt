@@ -1,8 +1,4 @@
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-        local cg = game:GetService("CoreGui")
-        local uis = game:GetService("UserInputService")
-        local ts = game:GetService("TweenService")
-
               local RunLoader = (function(write)
                     	local Projects = {
                               		["Saber Showdown"] = {
