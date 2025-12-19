@@ -1,0 +1,61 @@
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+local RunLoader = (function(write)
+	local Projects = {
+		["Saber Showdown"] = {
+			GameId = 4430449940;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/767679b1f11266adcad47cc72499ee53cf1cae95779b85891df50a63f0bd7bc8.lua";
+		};
+		["Prison Life"] = {
+			GameId = 73885730;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/0ddb05e46e8213c395e61aded708fab415795988e782f3477679bc0bacca5d71.lua";
+		};
+		["Chess Club"] = {
+			GameId = 7266261686;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/495bc43575b9ffdf6ad9bf9dddc4c31c825d3583d764a84362d5cb0c1af130be.lua";
+		};
+		["The Forge"] = {
+			GameId = 7671049560;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/35a28a886a1bbd98e3816b177203eb52da981290fca9dfd710f0ccb138f974f8.lua";
+		};
+		["Murder Mystery 2"] = {
+			GameId = 66654135;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/4aa77238c609be3eeb0536f6afc3135e78917a2c23deccbcab332569073774d3.lua";
+		};
+	};
+
+	local CurrentGameId = game.GameId
+	
+	for ProjectName, ProjectData in pairs(Projects) do
+		if ProjectData.GameId == CurrentGameId then
+			local success, result = pcall(function()
+				return game:HttpGet(ProjectData.Loader)
+			end)
+			
+			if success then
+				local loadSuccess, loadResult = pcall(function()
+					loadstring(result)()
+				end)
+				
+				if not loadSuccess then
+					warn("Failed to execute script for " .. ProjectName .. " (GameId: " .. tostring(CurrentGameId) .. "): " .. tostring(loadResult))
+				else
+					if write then
+						print("Successfully loaded " .. ProjectName)
+					end
+				end
+			else
+				warn("Failed to fetch script for " .. ProjectName .. " (GameId: " .. tostring(CurrentGameId) .. "): " .. tostring(result))
+			end
+			return
+		end
+	end
+	
+	warn("No script found for GameId: " .. tostring(CurrentGameId))
+end)
+
+RunLoader(true)
