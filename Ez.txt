@@ -1,3 +1,18 @@
+local Services = setmetatable({}, {
+    __index = function(self, key)
+        local service = game:GetService(key)
+        self[key] = service
+        return service
+    end
+})
+
+local function GetImage(imageName)
+    return "rbxassetid://6022668898"
+end
+
+local function LPH_NO_VIRTUALIZE(func) return func end
+local function LPH_JIT_MAX(func) return func end
+
 local library = {
     flags = {},
     config_flags = {},
