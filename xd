@@ -16,11 +16,6 @@ local RunLoader = (function(write)
 			PlaceIds = {};
 			Loader = "https://api.getpolsec.com/scripts/hosted/495bc43575b9ffdf6ad9bf9dddc4c31c825d3583d764a84362d5cb0c1af130be.lua";
 		};
-		["The Forge"] = {
-			GameId = 7671049560;
-			PlaceIds = {};
-			Loader = "https://api.getpolsec.com/scripts/hosted/35a28a886a1bbd98e3816b177203eb52da981290fca9dfd710f0ccb138f974f8.lua";
-		};
 		["Murder Mystery 2"] = {
 			GameId = 66654135;
 			PlaceIds = {};
