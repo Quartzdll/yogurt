@@ -21,6 +21,11 @@ local RunLoader = (function(write)
 			PlaceIds = {};
 			Loader = "https://api.getpolsec.com/scripts/hosted/4aa77238c609be3eeb0536f6afc3135e78917a2c23deccbcab332569073774d3.lua";
 		};
+        ["Marvelous Smackdown"] = {
+			GameId = 3293514480;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/30fafd3cd522c6b46e7c4edd85f58e9834cc620b5dcff3afd4ff94978815e82d.lua";
+		};
 	};
 
 	local CurrentGameId = game.GameId
