@@ -26,6 +26,11 @@ local RunLoader = (function(write)
 			PlaceIds = {};
 			Loader = "https://api.getpolsec.com/scripts/hosted/30fafd3cd522c6b46e7c4edd85f58e9834cc620b5dcff3afd4ff94978815e82d.lua";
 		};
+        ["Centaura"] = {
+			GameId = 3317064564;
+			PlaceIds = {};
+			Loader = "https://api.getpolsec.com/scripts/hosted/3bbc3ccb0bdb2597085b2be90d71a1974a5e84cd83d22a13aadd1b634785aea5.lua";
+		};
 	};
 
 	local CurrentGameId = game.GameId
