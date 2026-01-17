@@ -31,11 +31,6 @@ local RunLoader = (function(write)
 			PlaceIds = {};
 			Loader = "https://api.getpolsec.com/scripts/hosted/3bbc3ccb0bdb2597085b2be90d71a1974a5e84cd83d22a13aadd1b634785aea5.lua";
 		};
-        ["MVSD"] = {
-			GameId = 7219654364;
-			PlaceIds = {};
-			Loader = "https://api.getpolsec.com/scripts/hosted/4cbd848d931c6afe01a22f7efce59156b0eebea2881962a41a2cb83894710bdc.lua";
-		};
 	};
 
 	local CurrentGameId = game.GameId
